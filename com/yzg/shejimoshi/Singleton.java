@@ -16,7 +16,6 @@ public class Singleton {
 
     //私有构造方法防止实例化
     private Singleton(){
-
     }
 
     public static Singleton getInstance(){
