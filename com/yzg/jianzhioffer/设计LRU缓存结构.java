@@ -82,7 +82,6 @@ public class 设计LRU缓存结构 {
         int[][] a = {{1,2,3},{2,2}};
         int[] lru = main.LRU(a, 0);
         for (int i : lru) {
-
             System.out.println(i);
         }
     }
