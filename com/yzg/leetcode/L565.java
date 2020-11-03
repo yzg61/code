@@ -37,6 +37,9 @@ public class L565 {
         int m;
         int n;
         for (int i = 0; i < len; i++) {
+            if (nums[i] == exc) {
+                continue;
+            }
             m = 0;
             n = i;
             while (nums[n] != exc) {
