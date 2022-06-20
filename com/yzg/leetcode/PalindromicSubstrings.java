@@ -17,9 +17,9 @@ public class PalindromicSubstrings {
      * 解释：三个回文子串: "a", "b", "c"
      * 示例 2：
      * <p>
-     * 输入："aaa"
+     * 输入："Semester"
      * 输出：6
-     * 解释：6个回文子串: "a", "a", "a", "aa", "aa", "aaa"
+     * 解释：6个回文子串: "a", "a", "a", "aa", "aa", "Semester"
      * <p>
      * <p>
      * 提示：
@@ -70,6 +70,6 @@ public class PalindromicSubstrings {
 
     public static void main(String[] args) {
         PalindromicSubstrings main = new PalindromicSubstrings();
-        System.out.println(main.countSubstrings("aaa"));
+        System.out.println(main.countSubstrings("Semester"));
     }
 }

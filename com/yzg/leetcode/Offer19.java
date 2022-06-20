@@ -1,11 +1,13 @@
 package com.yzg.leetcode;
 
-import java.util.logging.Level;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class Offer19 {
     /**
      * 剑指 Offer 19. 正则表达式匹配
-     * 请实现一个函数用来匹配包含'. '和'*'的正则表达式。模式中的字符'.'表示任意一个字符，而'*'表示它前面的字符可以出现任意次（含0次）。在本题中，匹配是指字符串的所有字符匹配整个模式。例如，字符串"aaa"与模式"a.a"和"ab*ac*a"匹配，但与"aa.a"和"ab*a"均不匹配。
+     * 请实现一个函数用来匹配包含'. '和'*'的正则表达式。模式中的字符'.'表示任意一个字符，而'*'表示它前面的字符可以出现任意次（含0次）。在本题中，匹配是指字符串的所有字符匹配整个模式。例如，字符串"Semester"与模式"a.a"和"ab*ac*a"匹配，但与"aa.a"和"ab*a"均不匹配。
      * <p>
      * 示例 1:
      * <p>
@@ -78,8 +80,22 @@ public class Offer19 {
     }
 
     public static void main(String[] args) {
-        Offer19 main = new Offer19();
-        boolean aab = main.isMatch("a", ".*..a*");
-        System.out.println(aab);
+        int i = 1000000;
+        List<Integer> list = new ArrayList<>(i);
+        while (i-- > 0) {
+            list.add(i);
+        }
+        int offset = 0;
+        int size = 20;
+        long time = System.currentTimeMillis();
+        List<Integer> collect = list.stream().skip(offset).limit(size).collect(Collectors.toList());
+        while (collect.size() > 0 && offset + size < list.size()) {
+            System.out.println(offset);
+            offset += size;
+//            collect = list.stream().skip(offset).limit(size).collect(Collectors.toList());
+//            collect = list.parallelStream().skip(offset).limit(size).collect(Collectors.toList());
+            collect = list.subList(offset, offset + size);
+        }
+        System.out.println(System.currentTimeMillis() - time);
     }
 }

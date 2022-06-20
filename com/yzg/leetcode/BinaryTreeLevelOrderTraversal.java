@@ -5,6 +5,7 @@ import com.yzg.jianzhioffer.TreeNode;
 
 import java.util.ArrayDeque;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class BinaryTreeLevelOrderTraversal {
@@ -44,7 +45,7 @@ public class BinaryTreeLevelOrderTraversal {
             dfs(queueFrom, queueTo, list);
 
         }
-
+        Collections.reverse(list);
         return list;
     }
 

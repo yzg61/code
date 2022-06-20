@@ -27,7 +27,7 @@ public class L301 {
      * 输出: [""]
      */
     private int leastCount = 0;
-    private Set<String> res = new HashSet<>();
+    private final Set<String> res = new HashSet<>();
 
     public List<String> removeInvalidParentheses(String s) {
 
@@ -41,18 +41,22 @@ public class L301 {
     public void find(StringBuilder s, int index, int leftCount,
                      int rightCount, int removeCount) {
         if (removeCount > leastCount) {
+            //删除字符次数超过之前的最小值，直接排除结果
             return;
         }
         if (rightCount > leftCount) {
+            //当前字符串的 ')' 数量 大于 '(' 的数量，接下来一定无法满足条件，排除
+            //例如 ’(()))‘,最后一个')'一定无法匹配
             return;
         }
         if (index < s.length() && index >= 0) {
             if (s.charAt(index) != '(' && s.charAt(index) != ')') {
-                //跳过
+                //当前字符不是'('，')' 只能跳过找下一个字符
                 find(s, ++index, leftCount, rightCount, removeCount);
             } else if (s.charAt(index) == '(' || s.charAt(index) == ')') {
+                //当前是'('，')' 的任意一个，有2种选择，删除当前字符或保留当前字符，进行递归
                 StringBuilder s2 = new StringBuilder(s.toString());
-                //删除
+                //删除，索引index保持不变
                 find(s.deleteCharAt(index), index, leftCount, rightCount, removeCount+1);
                 //保留
                 if (s2.charAt(index) == '(') {

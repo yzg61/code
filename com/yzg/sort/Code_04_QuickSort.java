@@ -17,14 +17,25 @@ public class Code_04_QuickSort {
 
     public static void quickSort(int[] arr, int l, int r) {
         if (l < r) {
-            swap(arr, l + (int) (Math.random() * (r - l + 1)), r);
+
             int[] p = partition(arr, l, r);
             quickSort(arr, l, p[0] - 1);
             quickSort(arr, p[1] + 1, r);
         }
     }
 
+    /**
+     * partition,比较arr[l]到arr[r]的元素，
+     * 以arr[r]为基准数，比基准数小的排前面，比基准数大的排后面
+     * @param arr
+     * @param l
+     * @param r
+     * @return
+     */
     public static int[] partition(int[] arr, int l, int r) {
+        //随机交换一个元素到数组最后一位，作为比较基准数
+        swap(arr, l + (int) (Math.random() * (r - l + 1)), r);
+
         int less = l - 1;
         int more = r;
         while (l < more) {

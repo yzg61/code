@@ -33,22 +33,6 @@ public class L148_SortList {
      * The number of nodes in the list is in the range [0, 5 * 104].
      * -105 <= Node.val <= 105
      */
-    public static class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode() {
-        }
-
-        ListNode(int val) {
-            this.val = val;
-        }
-
-        ListNode(int val, ListNode next) {
-            this.val = val;
-            this.next = next;
-        }
-    }
 
     public ListNode sortList(ListNode head) {
         int len = 0;

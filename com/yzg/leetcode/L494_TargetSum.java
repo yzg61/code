@@ -87,7 +87,7 @@ public class L494_TargetSum {
     public static void main(String[] args) {
         L494_TargetSum main = new L494_TargetSum();
         long timer = System.currentTimeMillis();
-        int res = main.findTargetSumWays(new int[]{34,21,12,36,16,7,31,7,41,49,7,48,22,19,32,46,19,18,44,34,24,45,23}, 47);
+        int res = main.findTargetSumWays(new int[]{34,21,12,36,16,7,31,7,41,49,7,48,22,19,32,46,19,18,44,34,24,45,23,45,23,23,45}, 47);
         System.out.println(System.currentTimeMillis() - timer);
         System.out.println(res);
     }

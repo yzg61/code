@@ -1,6 +1,7 @@
 package com.yzg.javabasc.thread;
 
 import java.time.temporal.ValueRange;
+import java.util.Arrays;
 
 /**
  * @author yzg
@@ -13,7 +14,7 @@ public class ThreadWait implements Runnable {
     @Override
     public void run() {
         try {
-            Thread.currentThread().sleep(5000);
+            Thread.sleep(5000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -21,13 +22,8 @@ public class ThreadWait implements Runnable {
     }
 
     public static void main(String[] args) throws InterruptedException {
-        ThreadWait tw = new ThreadWait();
-        Thread t = new Thread(tw);
-        t.start();
-        /*while (tw.value == null){
-            Thread.currentThread().sleep(100);
-        }*/
-        t.join();
-        System.out.println("tw.value = " + tw.value);
+        String s = "192,156,123";
+        String[] splits = s.split("//.");
+        System.out.println(Arrays.toString(splits));
     }
 }

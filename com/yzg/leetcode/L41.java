@@ -1,6 +1,7 @@
 package com.yzg.leetcode;
 
 import java.util.Arrays;
+import java.util.HashMap;
 
 public class L41 {
     /**
@@ -60,6 +61,7 @@ public class L41 {
         arr[i] = arr[j];
         arr[j] = tmp;
     }
+
 
     public static void main(String[] args) {
         int [] a = {1,2,0,2,4,6,4};

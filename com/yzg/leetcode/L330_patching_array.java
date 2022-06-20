@@ -53,8 +53,6 @@ public class L330_patching_array {
 
 
     public static void main(String[] args) {
-        L330_patching_array main = new L330_patching_array();
-        int i = main.minPatches(new int[]{1,2,31,33}, Integer.MAX_VALUE);
-        System.out.println(i);
+
     }
 }

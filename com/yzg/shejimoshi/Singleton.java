@@ -2,6 +2,7 @@ package com.yzg.shejimoshi;
 
 import com.yzg.test.Main;
 import java.lang.reflect.Proxy;
+import java.util.concurrent.locks.AbstractQueuedSynchronizer;
 
 /**
  * @author yzg

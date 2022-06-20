@@ -15,7 +15,7 @@ public class StringBufferWithoutSync {
     public static void main(String[] args) {
         StringBufferWithoutSync withoutSync = new StringBufferWithoutSync();
         for (int i =0; i < 1000; i++){
-            withoutSync.add("aaa","bbb");
+            withoutSync.add("Semester","bbb");
         }
     }
 }
